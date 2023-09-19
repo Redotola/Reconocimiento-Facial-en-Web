@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menú Desplegable</title>
+	<link rel="stylesheet" type = "text/css" href="../static/css/estilo.css">
+    <script type="text/javascript" src="../static/js/hora.js"></script>
+</head>
+<body>
+{% block content %}
+<h1> BIENVENIDO {{ session['name'] }}</h1>
+<nav>
+    <ul class="menu-horizontal">
+        <li>
+            <a href="/logout"><img src="../static/img/logout.png" width="60" height="60">
+                <br>Cerrar Sesion</a>
+        </li>
+        <li>
+            <a href="#"><img src="../static/img/admin.png" width="60" height="60">
+            <br>Gestión
+            </a>
+            <ul class="menu-vertical">
+                <li><a href="/registro">Registrar empleados</a></li>
+                <li><a href="/mostrar">Gestionar empleados</a></li>
+                <li><a href="/visualizar_asistencias_admin">Visualizar Asistencias</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><img src="../static/img/time.png" width="60" height="60">
+            <br>Horarios</a>
+            <ul class="menu-vertical">
+                <li><a href="/registro_Hora">Registrar horarios</a></li>
+                <li><a href="/editar_Hora">Gestion de horarios </a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><img src="../static/img/reporte.png" width="60" height="60">
+                <br>Reportes
+            </a>
+            <ul class="menu-vertical">
+                <li><a href="/reporte">Reporte de horarios</a></li>
+                <li><a href="/reporte_asistencia">Reporte de asistencia</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><img src="../static/img/reporte.png" width="60" height="60">
+                <br>Permisos
+            </a>
+        <ul class="menu-vertical">
+                <li><a href="/mostrar_admin_vacaciones">Acepta/rechazar Vacaciones</a></li>
+                <li><a href="/mostrar_admin_justificaciones">Acepta/rechazar Justificaciones</a></li>
+                <li><a href="/mostrar_admin_permisos"> Acepta/rechazar Permisos</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+
+    <div id="HoraActual"><h1><script type="text/javascript">HoraActual();</script></h1></div>
+    <br><br><br>
+    <div class="centrar_imagen">
+    <img src="../static/img/centro.jpg"></img>
+    </div>
+</body>
+</html>

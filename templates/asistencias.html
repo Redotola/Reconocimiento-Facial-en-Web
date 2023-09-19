@@ -1,0 +1,60 @@
+{% extends 'padre.html' %}
+{% block title %} Asistencia {% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>    
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+</head>
+     
+     <center>
+     <a href="/menu_Empe" >
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <polyline points="5 12 3 12 12 3 21 12 19 12" />
+            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+          </svg>
+     </a>
+    </center>
+    </div>
+  </nav>
+  <br><br>
+    <table class="table table-striped table-bordered bg-white table-sm">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Hora de asistencia</td>
+                <td>Fecha de asistencia</td>
+                <td>Correo Empleado</td>
+                <td>Estado de asistencia</td>
+            </tr> 
+        </thead>
+            <tbody>
+               {% for a in asistencias %} 
+               <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.hora }}</td>
+                <td>{{ a.fecha}}</td>
+                <td>{{ a.email_emp }}</td>
+                <td>{{ a.estado }}</td>
+               </tr>
+               {% endfor%}
+            </tbody>
+    </table>
+    <div>
+    <center><a href="/pase_asistencia_emp" class="btn btn-danger">Registrar nueva asistencia</a></center><!--Llamado de funcion para insertar una nueva asistencia en el sistema-->
+    </div>
+    {% endblock %}

@@ -1,0 +1,86 @@
+
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" type = "text/css" href="{{url_for('static', filename='css/Justificante.css')}}">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="menu">
+        <a href="/menu_Empe">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+            </svg>
+            <!--Logo de casa -->
+    </a>
+    </nav>
+    <center>
+        <br><br><br>
+
+<h1>Solicitud de Vacaciones</h1>
+
+<form class="form-group" action="/subir_vacaciones" method="POST">
+<br><br>
+<div class="form-group">
+    <label>Fecha:</label>
+    <input type="date" class="form-input" name="fecha">
+</div>
+<br><br>
+<div class="form-group">
+    <label>Motivo:</label><br>
+    <input name="mensaje" class="form-input" type="text">
+</div>
+<br><br>
+<center>
+<div class="form-group">
+    <center><button class="btn btn-danger">Registrar Vacación</button><center>
+</div>
+</form>
+
+<div class="container">
+    <div class="card shadow">
+    </form>
+
+    <table class="table table-striped table-bordered bg-white table-sm">
+        <thead>
+            <tr>
+                <td>Vacaciones</td>
+                <td>Nombre</td>
+                <td>Estado</td>
+            </tr> 
+        </thead>
+            <tbody>
+               {% for d in data %} 
+               <tr>
+                <td>{{ d.id }}</td>
+                <td>{{ d.name }}</td>
+                <td>{{ d.email }}</td>
+               </tr>
+               {% endfor%}
+            </tbody>
+    </table>
+    </div>
+</div>
+
+</body>
+</html>

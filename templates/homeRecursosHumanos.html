@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menú Desplegable</title>
+	<link rel="stylesheet" type = "text/css" href="../static/css/estilo.css">
+
+</head>
+<body>
+{% block content %}
+<h1> BIENVENIDO {{ session['name'] }}</h1>
+<nav>
+    <ul class="menu-horizontal">
+        <li><a href="/logout"><img src="../static/img/logout.png" width="60" height="60">
+            <br>Cerrar Sesion</a></li>
+        <li>
+            
+            <a href="#"><center><img src="/static/img/admin.png" width="60" height="60"></center>
+                Administrar empleados</a>
+            <ul class="menu-vertical">
+                <li><a href="/registro_Recu">Registro empleados</a></li>
+                <li><a href="/mostrar_Recu">Gestionar empleados</a></li>
+                <li><a href="/visualizar_asistencias_Recu">Visualizar Asistencias</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><img src="../static/img/reporte.png" width="60" height="60">
+                <br>Permisos
+            </a>
+        <ul class="menu-vertical">
+                <li><a href="/mostrar_recu_vacaciones">Acepta/rechazar Vacaciones</a></li>
+                <li><a href="/mostrar_recu_justificaciones">Acepta/rechazar Justificaciones</a></li>
+                <li><a href="/mostrar_recu_permisos"> Acepta/rechazar Permisos</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#"><img src="../static/img/reporte.png" width="60" height="60">
+                <br>Reportes
+            </a>
+        <ul class="menu-vertical">
+                <li><a href="/reporte_asistencia_recu">Reporte de asistencia</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+{% endblock %}
+    <br><br><br>
+    <div class="centrar_imagen">
+    <img src="../static/img/centro.jpg"></img>
+    </div>
+</body>
+</html>

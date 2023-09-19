@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>REPORTES</title>
+    <link rel="stylesheet" type = "text/css" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <nav class="menu">
+        <a href="/menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="72" height="72" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+            </svg>
+            <!--Logo de casa -->
+    </a>
+    </nav>
+
+    <div style="margin: 10px 0 0 10px;width: 600px">
+    <h2>GENERAR LOS REPORTES</h2>
+<p>
+    <a href="{{ url_for('.download_report') }}">Generate Pdf Report</a>
+</p>
+    </div>
+</body>
+</html>
